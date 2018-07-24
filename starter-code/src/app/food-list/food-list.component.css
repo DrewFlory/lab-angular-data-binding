@@ -1,0 +1,59 @@
+.food{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: 1.5px solid midnightblue;
+    width:30rem;
+    padding-right: 20rem;
+    margin-bottom: 1rem;
+    margin-left: 20%;
+    border-radius: 25px;
+}
+
+h1 {
+    margin-left: 35%;
+    font-size: 70px;
+    color: midnightblue;
+    border-bottom: 2px solid midnightblue;
+    width: 25rem;
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+.searchbar {
+    margin-bottom: 5rem;
+    margin-left: 42%;
+}
+
+.searchbar input {
+    height: 2rem;
+    width: 10rem;
+    padding: 0.3rem;
+    border-color: midnightblue;
+}
+
+.searchbar button {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 10px;
+    border-color: midnightblue;
+}
+
+img {
+    height: 8rem;
+    width: 15rem;
+    margin-bottom: 2rem;
+    border-radius: 20%;
+}
+
+span {
+    padding-bottom: 1rem;
+}
+
+h2 {
+    color: midnightblue;
+}
+
+span {
+    color: midnightblue;
+}
