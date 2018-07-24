@@ -1,17 +1,47 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="page">
 
-<h1>Todays Food</h1>
+  <h1>Todays Food</h1>
 
-<div class= "searchbar">
-  <input #foodSearch id= "myInput" name = "searchInput" type="text" class="searchTerm" placeholder="What are you looking for?">
-  <button (click)="searchMeal(foodSearch)" type="submit" class="searchButton">
-    <i class="fa fa-search"></i>
-  </button>
-</div>
+  <div class= "searchbar">
+    <input (keyup)="searchMeal()" 
+    id= "myInput" 
+    name = "searchInput" 
+    type="text" 
+    class="searchTerm" 
+    placeholder="What are you looking for?" 
+    [(ngModel)]="searchedFood">
 
-<div *ngFor = "let oneFood of foods" class="food">
-  <h2>{{oneFood.name}}</h2>
-  <span>Calories: {{oneFood.calories}}</span>
-  <img [src]="oneFood.image" alt="">
+    <button (click)="searchMeal(foodSearch)" type="submit" class="searchButton">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+
+  <button (click)="addMeal()" type="submit" class="addButton">ADD</button>
+
+  <div id="myForm">
+    <form action="">
+
+    <div class="add">
+      <label>Name: </label>
+      <input #nameInput type="text" [(ngModel)]="newFoods.name">
+
+      <label>Calories: </label>
+      <input #calorieInput type="text" [(ngModel)]="newFoods.calories">
+
+      <label>Image: </label>
+      <input #imageInput type="text" [(ngModel)]="newFoods.image">
+      
+      <button (click)="addMeal(nameInput, calorieInput, imageInput)">Submit</button>
+    </div>
+    </form>
+    
+  </div>
+
+  <div *ngFor = "let oneFood of newArray" class="food">
+    <h2>{{oneFood.name}} <button></button></h2>
+    <span>Calories: {{oneFood.calories}}</span>
+    <img [src]="oneFood.image" alt="">
+
+  </div>
 
 </div>

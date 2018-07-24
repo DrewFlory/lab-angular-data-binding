@@ -7,23 +7,37 @@ import foods from '../foods';
   styleUrls: ['./food-list.component.css']
 })
 export class FoodListComponent implements OnInit {
-  foods: Object[];
+  foods: Array<any>;
   newFoods: Object = {};
+  searchedFood:string = "";
+  newArray:Array<any> = [];
 
   constructor() { }
 
   ngOnInit() {
     this.foods = foods;
+    this.newArray = foods;
   }
 
-  searchMeal(input){
-    // let result = foods[0].filter(food=> food.length === input)
 
-    console.log("You searched for ", input.value)
-    if(input === this.foods[0]){
-      
-    }
-    
+  searchMeal(){
+    this.newArray = this.foods.filter((theFoodSearched) => {
+      return theFoodSearched.name.toLowerCase().includes(this.searchedFood.toLowerCase())
+    })
+      console.log(this.newArray);
   }
 
+  // addMeal(name, calories, image){
+  //     let x = document.getElementById("myForm");
+  //     if (x.style.display === "none") {
+  //         x.style.display = "block";
+  //     } else {
+  //         x.style.display = "none";
+  //     }
+  //     this.foods.push({
+  //       name: name.value,
+  //       calories: calories.value,
+  //       image: image.value
+  //     })
+  // }
 }
