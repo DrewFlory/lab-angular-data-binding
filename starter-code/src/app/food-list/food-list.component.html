@@ -8,7 +8,7 @@
     name = "searchInput" 
     type="text" 
     class="searchTerm" 
-    placeholder="What are you looking for?" 
+    placeholder="What are you looking for?"
     [(ngModel)]="searchedFood">
 
     <button (click)="searchMeal(foodSearch)" type="submit" class="searchButton">
@@ -16,10 +16,9 @@
     </button>
   </div>
 
-  <button (click)="addMeal()" type="submit" class="addButton">ADD</button>
+  <button (click)="showForm()" type="submit" class="addButton">ADD</button>
 
   <div id="myForm">
-    <form action="">
 
     <div class="add">
       <label>Name: </label>
@@ -33,15 +32,19 @@
       
       <button (click)="addMeal(nameInput, calorieInput, imageInput)">Submit</button>
     </div>
-    </form>
     
   </div>
 
+  <div class="scroll">
   <div *ngFor = "let oneFood of newArray" class="food">
-    <h2>{{oneFood.name}} <button></button></h2>
+    <div class="name">
+      <h2>{{oneFood.name}}</h2>
+      <button class="likeButton">Add To Menu</button>
+    </div>
     <span>Calories: {{oneFood.calories}}</span>
     <img [src]="oneFood.image" alt="">
-
+    
   </div>
+</div>
 
 </div>

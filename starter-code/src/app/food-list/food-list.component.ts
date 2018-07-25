@@ -27,17 +27,20 @@ export class FoodListComponent implements OnInit {
       console.log(this.newArray);
   }
 
-  // addMeal(name, calories, image){
-  //     let x = document.getElementById("myForm");
-  //     if (x.style.display === "none") {
-  //         x.style.display = "block";
-  //     } else {
-  //         x.style.display = "none";
-  //     }
-  //     this.foods.push({
-  //       name: name.value,
-  //       calories: calories.value,
-  //       image: image.value
-  //     })
-  // }
+  addMeal(name, calories, image){
+      this.foods.push({
+        name: name.value,
+        calories: calories.value,
+        image: image.value
+      })
+    }
+
+  showForm(){
+    let x = document.getElementById("myForm");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+}
 }
